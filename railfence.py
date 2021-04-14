@@ -2,7 +2,7 @@
 # This code was written to support a Python security lab
 # in UNH's 2021 GenCyber camp
 
-def encrypt( text, railCount, offset):
+def encrypt( text, railCount = 3, offset = 0 ):
 
     # fix wild railCount values
     if railCount < 2: railCount = 2
@@ -32,7 +32,7 @@ def encrypt( text, railCount, offset):
         cipher += rails[i]
     return cipher
 
-def decrypt( cipher, railCount, offset ):
+def decrypt( cipher, railCount = 3, offset = 0 ):
     railoffset = []
     railsize = []
     
