@@ -4,6 +4,9 @@
 
 def encrypt( text, railCount = 3, offset = 0 ):
 
+    # Do nothing if text doesn't have some text
+    if (type(text) != str) or (str == "") : return ""
+    
     # fix wild railCount values
     if railCount < 2: railCount = 2
     railCount = railCount % (len(text)//2)
@@ -35,6 +38,9 @@ def encrypt( text, railCount = 3, offset = 0 ):
 def decrypt( cipher, railCount = 3, offset = 0 ):
     railoffset = []
     railsize = []
+    
+    # Do nothing if cipher doesn't have some text
+    if (type(cipher) != str) or (str == "") : return ""
     
     # fix wild railCount values
     if railCount < 2: railCount = 2
