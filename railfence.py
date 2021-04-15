@@ -12,6 +12,9 @@ def encrypt( text, railCount = 3, offset = 0 ):
     railCount = railCount % (len(text)//2)
     cycleSize = railCount + (railCount-2)
 
+    # Return the original text if less than a full cycle
+    if len(text) < cycleSize  : return text
+    
     # fix wild offset values
     if offset < 0: offset = 0
     offset = offset % cycleSize
@@ -40,12 +43,15 @@ def decrypt( cipher, railCount = 3, offset = 0 ):
     railsize = []
     
     # Do nothing if cipher doesn't have some text
-    if not isinstance(text,str) or (len(text) == 0)  : return ""
+    if not isinstance(cipher,str) or (len(cipher) == 0)  : return ""
     
     # fix wild railCount values
     if railCount < 2: railCount = 2
     railCount = railCount % (len(cipher)//2)
     cycleSize = railCount + (railCount-2)
+
+    # Return the original text if less than a full cycle
+    if len(cipher) < cycleSize  : return cipher
 
     # fix wild offset values
     if offset < 0: offset = 0
