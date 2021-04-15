@@ -5,7 +5,7 @@
 def encrypt( text, railCount = 3, offset = 0 ):
 
     # Do nothing if text doesn't have some text
-    if not isinstance(text,str) or (len(str) == 0)  : return ""
+    if not isinstance(text,str) or (len(text) == 0)  : return ""
     
     # fix wild railCount values
     if railCount < 2: railCount = 2
@@ -40,7 +40,7 @@ def decrypt( cipher, railCount = 3, offset = 0 ):
     railsize = []
     
     # Do nothing if cipher doesn't have some text
-    if not isinstance(text,str) or (len(str) == 0)  : return ""
+    if not isinstance(text,str) or (len(text) == 0)  : return ""
     
     # fix wild railCount values
     if railCount < 2: railCount = 2
